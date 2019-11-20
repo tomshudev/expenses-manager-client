@@ -1,0 +1,30 @@
+@import "../../../../styles/styles.less";
+
+.sidebar {
+  position: relative;
+  z-index: 1;
+
+  visibility: hidden;
+
+  width: 12rem;
+  height: 100vh;
+  background-color: @color-secondary;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  animation: sidebarin 1s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards;
+}
+
+@keyframes sidebarin {
+  to {
+    visibility: visible;
+  }
+  0% {
+    top: 100vh;
+  }
+  100% {
+    top: 0;
+  }
+}

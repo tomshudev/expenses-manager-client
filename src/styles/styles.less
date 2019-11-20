@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+@import "colors.less";
+@import "variables.less";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Oswald", sans-serif;
+  overflow: hidden;
+}
+
+.background {
+  background-color: @color-primary;
+  background-color: #073b4c;
+  position: absolute;
+  z-index: 0;
+  bottom: -38rem;
+  width: 120%;
+  height: 200%;
+  right: -15rem;
+  border-radius: 50%;
+  animation: getin 1s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+@keyframes getin {
+  0% {
+    bottom: -25rem;
+    width: 25%;
+    height: 50%;
+    border-radius: 50%;
+  }
+  100% {
+    bottom: -38rem;
+    width: 120%;
+    height: 200%;
+    border-radius: 50%;
+  }
+}
