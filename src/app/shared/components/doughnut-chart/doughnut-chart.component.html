@@ -1,0 +1,16 @@
+<div class="graph">
+  <canvas #chart></canvas>
+  <div class="legend" *ngIf="showLegend">
+    <div class="chart-legend">
+      <div
+        class="chart-legend__item"
+        *ngFor="let item of items"
+        [style.background-color]="item.color"
+        (click)="update($event, item)"
+      >
+        {{ item.label }} <br />
+        {{ item.percentages }}
+      </div>
+    </div>
+  </div>
+</div>
