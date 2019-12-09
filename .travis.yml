@@ -21,10 +21,8 @@ install:
 
 script:
   - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
-
-script:
   - npm run-script build
-  - cd dist/angular-github-pages-travis
+  - cd dist/expenses-manager-client
   - cp index.html 404.html
 
 deploy:
