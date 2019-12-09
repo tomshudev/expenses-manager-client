@@ -22,16 +22,13 @@ install:
 script:
   - npm run test -- --watch=false --no-progress --browsers=ChromeHeadlessNoSandbox
 
-stages:
-  - name: build
-    if: branch = setup-pages-deploy
-    script:
-      - npm run build --prod
+script:
+  - npm run build --prod
 
-  - name: deploy
-    if: branch = setup-pages-deploy
-    deploy:
-      provider: pages
-      skip_cleanup: true
-      github_token: $GITHUB_TOKEN
-      local_dir: dist/expenses-manager-client
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/expenses-manager-client
+  on:
+    branch: setup-pages-deploy
