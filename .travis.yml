@@ -31,4 +31,4 @@ deploy:
   github_token: $GITHUB_TOKEN
   local_dir: dist/expenses-manager-client
   on:
-    branch: setup-pages-deploy
+    branch: master
