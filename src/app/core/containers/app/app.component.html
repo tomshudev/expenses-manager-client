@@ -1,4 +1,8 @@
 <div class="background"></div>
-<emg-sidebar></emg-sidebar>
 
-<emg-doughnut-chart [showLegend]="true"></emg-doughnut-chart>
+<div class="main">
+  <emg-sidebar></emg-sidebar>
+  <div class="main__data" [@routeAnimations]="o && o.activatedRouteData">
+    <router-outlet #o="outlet"></router-outlet>
+  </div>
+</div>

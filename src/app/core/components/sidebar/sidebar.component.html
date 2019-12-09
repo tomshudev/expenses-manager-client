@@ -1,9 +1,37 @@
 <div class="sidebar">
   <div class="siderbar__logo"></div>
   <div class="sidebar__actions">
-    <div class="sidebar__actions--actions">A</div>
-    <div class="sidebar__actions--actions">B</div>
-    <div class="sidebar__actions--actions">C</div>
-    <div class="sidebar__actions--actions">D</div>
+    <a
+      class="sidebar__actions--link"
+      routerLink="/max-expense"
+      routerLinkActive="active"
+      ><svg class="sidebar__actions--action">
+        <use xlink:href="#lnr-briefcase"></use></svg
+    ></a>
+    <a
+      class="sidebar__actions--link"
+      routerLink="/home"
+      routerLinkActive="active"
+      ><svg class="sidebar__actions--action">
+        <use xlink:href="#lnr-pie-chart"></use></svg
+    ></a>
+    <a
+      class="sidebar__actions--link"
+      routerLink="/home"
+      routerLinkActive="active"
+    >
+      <svg class="sidebar__actions--action">
+        <use xlink:href="#lnr-history"></use>
+      </svg>
+    </a>
+    <a
+      class="sidebar__actions--link"
+      routerLink="/home"
+      routerLinkActive="active"
+    >
+      <svg class="sidebar__actions--action">
+        <use xlink:href="#lnr-heart-pulse"></use>
+      </svg>
+    </a>
   </div>
 </div>

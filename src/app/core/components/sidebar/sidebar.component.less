@@ -9,12 +9,40 @@
   width: 12rem;
   height: 100vh;
   background-color: @color-secondary;
+  padding: 1rem;
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 
   animation: sidebarin 1s cubic-bezier(0.77, 0, 0.175, 1) 0.5s forwards;
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &--link {
+      &:not(:last-of-type) {
+        margin-bottom: 3rem;
+      }
+    }
+
+    &--action {
+      width: 6rem;
+      height: 6rem;
+      cursor: pointer;
+
+      & > use {
+        transition: all 0.3s;
+      }
+
+      &:hover > use {
+        fill: white;
+      }
+    }
+  }
 }
 
 @keyframes sidebarin {
