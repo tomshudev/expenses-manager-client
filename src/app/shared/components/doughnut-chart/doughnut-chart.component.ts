@@ -77,7 +77,7 @@ export class DoughnutChartComponent implements AfterViewInit {
       data: data,
       options: {
         circumference: Math.PI,
-        rotation: -0.5 * Math.PI,
+        rotation: Math.PI,
         cutoutPercentage: 50,
         responsive: true,
         weight: 0,
