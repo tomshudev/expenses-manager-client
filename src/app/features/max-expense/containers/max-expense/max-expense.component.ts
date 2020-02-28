@@ -25,7 +25,7 @@ import {
   styleUrls: ["./max-expense.component.less"]
 })
 export class MaxExpenseComponent implements AfterViewInit {
-  @ViewChild("expenseInput", { static: false }) expenseInput: ElementRef;
+  @ViewChild("expenseInput", { static: false }) expenseInput;
 
   @Input()
   set end(endRange: number) {
@@ -38,34 +38,10 @@ export class MaxExpenseComponent implements AfterViewInit {
   constructor() {}
 
   ngAfterViewInit() {
-    fromEvent(this.expenseInput.nativeElement, "keyup")
-      // .pipe(debounceTime(300))
-      .subscribe(() => {
-        this._counterSub$.next(this.expenseInput.nativeElement.value);
-      });
-
-    this._counterSub$
-      .pipe(
-        switchMap(endRange => {
-          return timer(0, this.countInterval).pipe(
-            mapTo(this.positiveOrNegative(endRange, this.currentNumber)),
-            startWith(this.currentNumber),
-            scan((acc: number, curr: number) => acc + curr),
-            takeWhile(this.isApproachingRange(endRange, this.currentNumber))
-          );
-        })
-        // takeUntil(this._onDestroy$)
-      )
-      .subscribe((val: number) => (this.currentNumber = val));
-  }
-
-  private positiveOrNegative(endRange, currentNumber) {
-    return endRange > currentNumber ? 1 : -1;
-  }
-
-  private isApproachingRange(endRange, currentNumber) {
-    return endRange > currentNumber
-      ? val => val <= endRange
-      : val => val >= endRange;
+    fromEvent(this.expenseInput.inputElement.nativeElement, "keyup").subscribe(
+      () => {
+        this.currentNumber = this.expenseInput.inputElement.nativeElement.value;
+      }
+    );
   }
 }
